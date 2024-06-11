@@ -3,16 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class ZmenaScenyPoDoteku : MonoBehaviour
 {
-    public string nazevNoveSceny;
-
-    private void OnCollisionEnter(Collision collision)
+   
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("stena"))
         {
-            if (gameObject.CompareTag("stena"))
-            {
-                SceneManager.LoadScene(nazevNoveSceny);
-            }
+            SceneManager.LoadScene("1LVL_2");
         }
+        if (other.CompareTag("stena2"))
+        {
+            SceneManager.LoadScene("2LVL_2");
+        }
+        if (other.CompareTag("stena3"))
+        {
+            SceneManager.LoadScene("3LVL_2");
+        }
+
     }
 }

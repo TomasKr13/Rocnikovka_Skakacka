@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Stone_sword
   - stena
+  - stenaZpet
+  - Zamek
+  - Voda
+  - Enemy
+  - key
+  - chest
+  - stena2
+  - stena3
+  - Sip
   layers:
   - Default
   - TransparentFX

@@ -1,37 +1,34 @@
-using System.Collections;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public GameObject SipObject;
-    public Transform ShootingPlace;
+    public GameObject SipObject; 
+    public Transform ShootingPlace; 
 
-    private float casMeziVystrely = 3f;
-    private float casDoDalsihoVystrelu = 0f;
+    private float casMeziVystrely = 3f; 
+    private float casDoDalsihoVystrelu = 0f; 
+    private float silaStrely = 10f; 
 
     void Update()
     {
-        casDoDalsihoVystrelu -= Time.deltaTime;
+        casDoDalsihoVystrelu -= Time.deltaTime; 
 
-        if (casDoDalsihoVystrelu <= 0f)
+        if (casDoDalsihoVystrelu <= 0f) 
         {
-            VystrelitSip();
-            casDoDalsihoVystrelu = casMeziVystrely;
+            VystrelitSip(); 
+            casDoDalsihoVystrelu = casMeziVystrely; 
         }
     }
 
     void VystrelitSip()
     {
-        
         GameObject novySip = Instantiate(SipObject, ShootingPlace.position, ShootingPlace.rotation);
 
- 
-        Rigidbody sipRigidbody = novySip.GetComponent<Rigidbody>();
+        Rigidbody2D sipRigidbody = novySip.GetComponent<Rigidbody2D>();
         if (sipRigidbody != null)
         {
-            sipRigidbody.AddForce(ShootingPlace.forward * 5000f);
+            sipRigidbody.velocity = -transform.right * silaStrely;
+            
         }
-        
     }
 }
-

@@ -8,12 +8,6 @@ public class Kamera_Pohyb : MonoBehaviour
     public float vyska = 3f;
     public float citlivost = 1f;
 
-    void Start()
-    {
-        
-    }
-
-
     private void Update()
     {
         float vstup = Input.GetAxis("Vertical");
